@@ -1,0 +1,13 @@
+Avaliação - Arquitetura e Administração de Containers, Microservices, Kubernetes
+
+
+1) Questão
+
+1.Clone o projeto:
+
+git clone https://github.com/evandrocustodio/springboot-backend-avaliacao.git
+
+2.Edite o arquivo src/main/resources/application.properties 
+e altere o valor da propriedade aluno.nome para o seu nome 
+completo;
+
