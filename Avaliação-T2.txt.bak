@@ -112,13 +112,3 @@ docker stack deploy -c docker-compose.yml avaliacao
 docker stack rm avaliacao
 
 QUESTÃO 05 – KUBERNETES - PODS
-
-Abra o arquivo App.tsx e altere a linha 15 e gere novamente a
-imagem do frontend. (arquivo já corrigido)
-
-
-docker build -t migueljefferson/avaliacao:frontend .
-
-kubectl apply -f postgres-pod.yaml
-kubectl apply -f backend-pod.yaml
-kubectl apply -f frontend-pod.yaml
