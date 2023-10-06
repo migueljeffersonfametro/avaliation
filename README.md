@@ -13,8 +13,6 @@ git clone https://github.com/evandrocustodio/springboot-backend-avaliacao.git
 e altere o valor da propriedade aluno.nome para o seu nome 
 completo;
 
-ok
-
 3.Gere a imagem:
 
 rodar o comando abaixo no caminho ..\avaliation\questao1\springboot-backend-avaliacao
@@ -105,10 +103,13 @@ docker run -d --rm --name backend --link postgres:postgres -e DB_HOST_NAME=postg
 docker run -d --rm --name frontend --link backend:backend -p 3000:80 migueljefferson/avaliacao:frontend
 ```
 
-2. Print a tela com o resultado do comando: docker ps -a
-ok
+2. Print a tela com o resultado do comando: 
 
-3. Acesse o backend e capture a tela dos seguintes serviços:
+```bash
+docker ps -a
+```
+
+1. Acesse o backend e capture a tela dos seguintes serviços:
 - http://localhost:8080/info
 - http://localhost:8080/despesas/
 
@@ -154,3 +155,22 @@ kubectl apply -f postgres-pod.yaml
 kubectl apply -f backend-pod.yaml
 kubectl apply -f frontend-pod.yaml
 ```
+- Remover Pod
+```bash
+kubectl delete -f backend-pod.yaml
+```
+
+1.Crie os arquivos YAML para a criação dos PODS para os 3 containers da questão 3.
+
+2.Lembre de colocar as tags:
+app: postgres, app: backend e app: frontend nos respectivos PODS.
+
+3.Instancie os 3 PODS
+
+4.Capture a tela com o resultado do comando: 
+
+```bash
+kubectl get pods
+```
+5.Remova os 3 pods. 
+
