@@ -213,6 +213,13 @@ kubectl apply -f backend-deploy.yml
 kubectl apply -f frontend-deploy.yml
 ```
 
+#### Excluir recursos do Kubernetes
+```bash
+kubectl delete -f postgres-deploy.yml
+kubectl delete -f backend-deploy.yml
+kubectl delete -f postgres-deploy.yml
+```
+
 ### 2.Lembre de definir 3 instâncias para o FRONTEND
 
 ### 3.Instancie os 3 DEPLOYMENTS
@@ -220,4 +227,22 @@ kubectl apply -f frontend-deploy.yml
 ### 4.Capture a tela com o resultado do comando:
 ```bash 
 kubectl get all
+```
+
+## QUESTÃO 07 – KUBERNETES - SERVICES
+### 1.Crie os arquivos YAML para a criação dos SERVICES para os 3 containers da questão 3.
+
+#### Criar services
+```bash
+kubectl apply -f svc-postgres.yml
+kubectl apply -f svc-backend.yml
+kubectl apply -f svc-frontend.yml
+```
+
+### 2.Lembre-se que as portas de origem do Backend, frontend e Postgres são respectivamente: 8080, 3000 e 5432.
+### 3.Lembre-se que o backend (Porta 31150) e o Frontend (Porta 32150) devem ser do tipo NodePort e o postgres deve ser do tipo ClusterIP
+### 4.Instancie os 3 SERVIÇOS
+### 5.Capture a tela com o resultado do comando: 
+```bash
+kubectl get svc
 ```
