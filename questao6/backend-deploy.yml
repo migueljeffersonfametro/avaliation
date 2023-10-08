@@ -13,10 +13,10 @@ spec:
     spec:
       containers:
         - name: backend
-          image: nicolasgomes18/avaliacao:backend
+          image: migueljefferson/avaliacao:backend
           env:
             - name: DB_HOST_NAME
-              value: 10.1.1.51
+              value: 10.1.0.89
             - name: DB_NAME
               value: postgres
             - name: DB_PASSWORD

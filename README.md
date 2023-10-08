@@ -193,3 +193,31 @@ kubectl get pods
 kubectl delete pods --all
 ```
 
+### QUESTÃO 06 – KUBERNETES - DEPLOYMENTS
+1.Crie os arquivos YAML para a criação dos DEPLOYMENTS para os 3 containers da questão 3.
+
+### Criar pods postgres
+```bash
+kubectl apply -f postgres-deploy.yml
+```
+### Ver IP pod
+```bash
+kubectl describe pods
+```
+Obs.: alterar o ip do arquivo backend-deploy.yml com o ip do postgres
+
+### Criar pods backend e frontend
+
+```bash
+kubectl apply -f backend-deploy.yml
+kubectl apply -f frontend-deploy.yml
+```
+
+2.Lembre de definir 3 instâncias para o FRONTEND
+
+3.Instancie os 3 DEPLOYMENTS
+
+4.Capture a tela com o resultado do comando:
+```bash 
+kubectl get all
+```

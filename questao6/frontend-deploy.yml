@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: nicolasgomes18/avaliacao:frontend
+          image: migueljefferson/avaliacao:frontend
           ports:
             - containerPort: 3000

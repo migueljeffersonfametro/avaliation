@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
     - name: postgres-container
-      image: postgres
+      image: postgres:15.2
       env:
         - name: POSTGRES_PASSWORD
           value: postgres
