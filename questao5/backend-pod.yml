@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: backend-pod
+  labels:
+    app: backend
+    type: backend
+spec:
+  containers:
+    - name: backend
+      image: migueljefferson/avaliacao:backend
+      env:
+        - name: DB_HOST_NAME
+          value: 10.1.0.85
+        - name: DB_NAME
+          value: postgres
+        - name: DB_PASSWORD
+          value: postgres
+        - name: DB_PORT
+          value: "5432"
+      ports:
+        - containerPort: 8080

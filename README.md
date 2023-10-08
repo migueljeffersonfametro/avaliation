@@ -147,15 +147,29 @@ QUESTÃO 05 – KUBERNETES - PODS
 Abra o arquivo App.tsx e altere a linha 15 e gere novamente a
 imagem do frontend. (arquivo já corrigido)
 
+### Criar imagem frontend
 ```bash
 docker build -t migueljefferson/avaliacao:frontend .
 ```
+
+### Criar pods postgres
 ```bash
-kubectl apply -f postgres-pod.yaml
-kubectl apply -f backend-pod.yaml
-kubectl apply -f frontend-pod.yaml
+kubectl apply -f postgres-pod.yml
 ```
-- Remover Pod
+### Ver IP pod
+```bash
+kubectl describe pods
+```
+Obs.: alterar o ip do arquivo backend-pod.yml com o ip do postgres
+
+### Criar pods backend e frontend
+
+```bash
+kubectl apply -f backend-pod.yml
+kubectl apply -f frontend-pod.yml
+```
+
+### Remover Pod individual
 ```bash
 kubectl delete -f backend-pod.yaml
 ```
@@ -173,4 +187,9 @@ app: postgres, app: backend e app: frontend nos respectivos PODS.
 kubectl get pods
 ```
 5.Remova os 3 pods. 
+
+### Remover todos os Pods
+```bash
+kubectl delete pods --all
+```
 

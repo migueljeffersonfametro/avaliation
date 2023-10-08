@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: nicolasgomes18/avaliacao:backend
+          env:
+            - name: DB_HOST_NAME
+              value: 10.1.1.51
+            - name: DB_NAME
+              value: postgres
+            - name: DB_PASSWORD
+              value: postgres
+            - name: DB_PORT
+              value: "5432"
+          ports:
+            - containerPort: 8080
